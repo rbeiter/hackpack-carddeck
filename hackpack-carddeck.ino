@@ -3,6 +3,7 @@
 #include <Adafruit_NeoMatrix.h>
 #include "RGB.h"
 #include "Cards.h"
+#include "random.h"
 
 #define PIN 1
 
@@ -19,6 +20,8 @@ void setup() {
   matrix.setBrightness(5);
   matrix.setTextColor( matrix.Color(white.r, white.g, white.b) );
   matrix.setTextWrap(false);
+
+  randomSeed(seedOut(31));
 
   newDeck();  
 }
