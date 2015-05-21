@@ -27,7 +27,7 @@ void newDeck() {
   int n = 0;
   for (int s=0; s < 4; s++) {
     for (int f=0; f < 13; f++) {
-      Card card = { (Suits)s, CardFaces[f] };
+      Card card = { (Suit)s, CardFaces[f] };
       deck[n++] = card;
     }
   }
@@ -53,7 +53,7 @@ void loop() {
 }
 
 void drawCard(Card card) {
-  Suits suit = card.suit;
+  Suit suit = card.suit;
   String face = card.face;
   String composite = face + SuitASCII[suit];
   RGB color = (suit == hearts || suit == diamonds) ? red : white;
